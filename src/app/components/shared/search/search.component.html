@@ -1,0 +1,12 @@
+<h2>Coincidencias de Heroes con "{{sTermino}}" <small>Marvel y DC</small></h2>
+<hr>
+<div class="row" *ngIf="ArrHeroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-warning">
+      No existen resultados de nombres con "{{sTermino}}""
+    </div> 
+  </div>
+</div>
+<div class="card-columns">
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroesP" [index]="i" *ngFor="let heroesP of ArrHeroes; let i = index"></app-heroe-tarjeta>
+</div>
