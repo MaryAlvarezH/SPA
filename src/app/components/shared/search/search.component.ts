@@ -21,13 +21,12 @@ export class SearchComponent implements OnInit {
       // console.log(`Parametro: ${params['termino']}`)
       this.sTermino = params['termino'];
       this.ArrHeroes = this._HeroesService.buscarHeroes(params ['termino']);
-
+      console.log(this.ArrHeroes)
     })
     
   }
-
-  verHeroe(idx :number){
-    this._Router.navigate(['/heroe', idx])
-  }
+  // verHeroe(idx :number){
+  //   this._Router.navigate(['/heroe', idx])
+  // }
 
 }

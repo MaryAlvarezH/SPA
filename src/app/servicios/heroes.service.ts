@@ -73,11 +73,15 @@ export class HeroesService {
 
       termino = termino.toLowerCase();
 
-      for (let heroe of this.heroes){
+      // For original que causa conflicto en las posiciones por no tener un id
+      // for (let heroe of this.heroes){ 
+      for (let i=0; i<this.heroes.length; i++){
+        let heroe = this.heroes[i];
         let nombre = heroe.nombre.toLowerCase();
 
         //Si encuentra en nombre en ese termino devuelve la posicion en la que se encuentra (si no lo encuentra regresa -1)
         if (nombre.indexOf(termino)>=0){
+          heroe.idx=i;
           heroesArr.push(heroe)
         }      
       }
@@ -94,6 +98,7 @@ export class HeroesService {
         img: string;
         aparicion: string;
         casa: string;
+        idx?: number;
     
     
 }

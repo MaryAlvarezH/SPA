@@ -20,9 +20,10 @@ export class HeroeTarjetaComponent implements OnInit {
   }
 
   verHeroe(){
-  // console.log(this.index);
-  // this.router.navigate(['/heroe', this.index])
-  this.heroeSeleccionado.emit(this.index)
+  console.log(this.index);
+  this.router.navigate(['/heroe', this.index])
+  //Ejemplo practico de Output y EventEmiter sin embargo, no se necesita
+  // this.heroeSeleccionado.emit(this.index) 
   }
 
 }

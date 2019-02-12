@@ -8,5 +8,8 @@
   </div>
 </div>
 <div class="card-columns">
-  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroesP" [index]="i" *ngFor="let heroesP of ArrHeroes; let i = index"></app-heroe-tarjeta>
+  <!-- De este modo el index no es correcto ya que es el index del arreglo generado no el index del servicio original -->
+  <!-- <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroesP" [index]="i" *ngFor="let heroesP of ArrHeroes; let i = index"></app-heroe-tarjeta> -->
+
+  <app-heroe-tarjeta  [heroe]="heroesP" [index]="heroesP.idx" *ngFor="let heroesP of ArrHeroes;"></app-heroe-tarjeta>
 </div>
